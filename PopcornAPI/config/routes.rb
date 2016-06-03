@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api, defaults: { format: :json } do
+    scope module: :v1 do
+      get 'actors' => 'actors#index'
+      get 'actors/:name' => 'actors#find'
+      get 'movies' => 'movies#index'
+      get 'movies/:title' => 'movies#find'
+    end
+  end
 end
