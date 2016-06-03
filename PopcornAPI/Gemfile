@@ -5,6 +5,7 @@ gem 'puma', '~> 3.0'
 gem 'pg'
 gem 'rack-cors'
 gem 'figaro'
+gem 'active_model_serializers'
 
 # gem 'jbuilder', '~> 2.0'
 # gem 'redis', '~> 3.0'

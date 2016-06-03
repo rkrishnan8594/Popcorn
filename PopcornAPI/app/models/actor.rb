@@ -1,4 +1,5 @@
 class Actor < ApplicationRecord
+  has_many :movies, class_name: "ActorMovie"
 
   def self.find_by_name(name)
     actors = Actor.where({name: name})
