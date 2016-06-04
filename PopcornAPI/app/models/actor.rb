@@ -1,8 +1,11 @@
+require 'jsonclient'
+require 'uri'
+
 class Actor < ApplicationRecord
   has_many :movies, class_name: "ActorMovie"
 
   def self.find_by_name(name)
-    actors = Actor.where({name: name})
+    actors = Actor.where(name: name)
     if actors.count == 0
       tmdb_response = search_tmdb(name)
       record = import_actor(tmdb_response["results"][0])
@@ -15,7 +18,7 @@ class Actor < ApplicationRecord
   def self.search_tmdb(query)
     url = "http://api.themoviedb.org/3/search/person?api_key="
     url = url + ENV['MOVIE_API_KEY'] + '&query=' + query
-    response = JSONClient.new.get(URI.parse(URI.encode(query_url))).content
+    response = JSONClient.new.get(URI.parse(URI.encode(url))).content
     return response
   end
 
