@@ -1,3 +1,6 @@
-{{#if currentUser }}
-  Navigation
-{{/if}}
+<div class="navbar">
+  {{#if session.isAuthenticated }}
+    <a class="navbar__link" href="#" {{action "logout"}}>Logout</a>
+    {{#link-to "user" sessionAccount.user.id class="navbar__link"}}Profile{{/link-to}}
+  {{/if}}
+</div>
