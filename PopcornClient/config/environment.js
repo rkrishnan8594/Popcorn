@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'popcorn-client',
+    podModulePrefix: 'popcorn-client/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -25,8 +26,9 @@ module.exports = function(environment) {
 
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'games',
-    routeIfAlreadyAuthenticated: 'games'
-  }
+    routeIfAlreadyAuthenticated: 'games',
+    routeAfterInvalidation: 'login',
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get 'actors/:name' => 'actors#find'
       get 'movies' => 'movies#index'
       get 'movies/:title' => 'movies#find'
+      get 'users/me', to: 'users#me'
+      post 'users', to: 'users#create'
     end
   end
 end
