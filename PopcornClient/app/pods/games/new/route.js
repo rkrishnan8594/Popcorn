@@ -13,6 +13,15 @@ export default Route.extend(AuthenticatedRouteMixin, {
   session: service('session'),
 
   model() {
-    return this.store.findAll('game');
+    return this.store.createRecord('game');
+  },
+
+  actions: {
+    save(model) {
+      let self = this;
+      model.save().then(function() {
+        self.transitionTo('games');
+      });
+    }
   }
 });

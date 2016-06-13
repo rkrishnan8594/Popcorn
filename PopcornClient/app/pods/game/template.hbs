@@ -1,0 +1,7 @@
+<h1 class="game__hdr">{{model.name}}.</h1>
+
+<ul>
+  {{#each model.players as |player|}}
+    <li>{{player.user-id}}</li>
+  {{/each}}
+</ul>

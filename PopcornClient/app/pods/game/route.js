@@ -12,7 +12,7 @@ const {
 export default Route.extend(AuthenticatedRouteMixin, {
   session: service('session'),
 
-  model() {
-    return this.store.findAll('game');
+  model(params) {
+    return this.store.findRecord('game', params.id);
   }
 });

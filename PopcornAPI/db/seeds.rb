@@ -9,3 +9,11 @@
 User.create(email: "example@example.com", password: "examplepassword")
 User.create(email: "test@test.com", password: "testpassword")
 User.create(email: "email@email.com", password: "emailpassword")
+
+Game.create(name: "First Game")
+Game.create(name: "Second Game")
+Game.create(name: "Third Game")
+
+Player.create(user_id: 1, game_id: 2)
+Player.create(user_id: 2, game_id: 2)
+Player.create(user_id: 3, game_id: 2)

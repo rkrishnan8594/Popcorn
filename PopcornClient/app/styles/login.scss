@@ -19,12 +19,17 @@
 }
 
 .login__btn {
-  background-color: #FFF;
+  background-color: #534A9A;
+  border: 2px solid #FFF;
   border-radius: 3px;
-  color: #534A9A;
+  color: #FFF;
   font-size: 12px;
   font-weight: bold;
   height: 30px;
   margin: 12px 62px;
   width: 100px;
+  &:hover {
+    background-color: #FFF;
+    color: #534A9A;
+  }
 }

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  game: one
+  strikes: 1
+  active: false
+
+two:
+  user: two
+  game: two
+  strikes: 1
+  active: false

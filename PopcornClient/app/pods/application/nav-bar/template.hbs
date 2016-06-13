@@ -2,5 +2,6 @@
   {{#if session.isAuthenticated }}
     <a class="navbar__link" href="#" {{action "logout"}}>Logout</a>
     {{#link-to "user" sessionAccount.user.id class="navbar__link"}}Profile{{/link-to}}
+    {{#link-to "games" class="navbar__link"}}Home{{/link-to}}
   {{/if}}
 </div>
