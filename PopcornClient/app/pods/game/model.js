@@ -4,5 +4,5 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   name: attr('string'),
-  players: hasMany('player', { async: true })
+  players: hasMany('player', {async: true})
 });

@@ -4,7 +4,7 @@
 }
 
 .login__form {
-  margin: 50px auto;
+  margin: 50px auto 30px auto;
   width: 20%;
 }
 
@@ -32,4 +32,9 @@
     background-color: #FFF;
     color: #534A9A;
   }
+}
+
+.signup__link {
+  font-size: 12px;
+  text-align: center;
 }

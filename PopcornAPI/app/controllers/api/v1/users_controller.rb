@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
-      render json: {user: {email: user.email, password: user.password}}, status: 201
+      render json: {user: {email: user.email, username: user.username, password: user.password}}, status: 201
     else
       puts user.errors.messages
       render json: {reason: {error: user.errors.messages}}, status: 419
@@ -22,6 +22,6 @@ class Api::V1::UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:data).require(:attributes).permit(:email, :password, :password_confirmation)
+      params.require(:data).require(:attributes).permit(:email, :username, :password, :password_confirmation)
     end
 end

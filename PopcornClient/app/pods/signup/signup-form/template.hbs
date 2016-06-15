@@ -1,5 +1,6 @@
 <form class="login__form" {{action "submit" on="submit"}}>
   {{input class="login__input" value=user.email placeholder="Email"}}
+  {{input class="login__input" value=user.username placeholder="Username"}}
   {{input class="login__input" value=user.password type="password" placeholder="Password"}}
   {{input class="login__input" value=user.passwordConfirmation type="password" placeholder="Confirm!"}}
   <button class="login__btn" type="submit">Submit</button>
