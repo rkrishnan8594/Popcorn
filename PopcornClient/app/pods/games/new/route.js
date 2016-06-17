@@ -1,19 +1,15 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-const {
-  Route
-} = Ember;
-
-const {
-  service
-} = Ember.inject;
+const { Route } = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
-  session: service('session'),
-
   model() {
     return this.store.createRecord('game');
+  },
+
+  deactivate() {
+    this.currentModel.deleteRecord();
   },
 
   actions: {

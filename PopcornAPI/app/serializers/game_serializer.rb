@@ -1,4 +1,4 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :current
   has_many :players
 end

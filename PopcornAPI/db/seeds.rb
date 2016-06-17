@@ -6,4 +6,47 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Player.create(user_id: 2, game_id: 1, username: "email", strikes: 0, active: true)
+
+User.create([
+  {
+    email: "rkrishnan8594@gmail.com",
+    password: "password",
+    username: "rowan"
+  },
+  {
+    email: "test@test.com",
+    password: "testpassword",
+    username: "testuser"
+  },
+  {
+    email: "example@example.com",
+    password: "examplepassword",
+    username: "exampleuser"
+  }
+])
+
+Game.create(name: "Game 1", current: 0)
+
+Player.create([
+  {
+    user_id: 1,
+    game_id: 1,
+    username: "rowan",
+    strikes: 0,
+    active: true
+  },
+  {
+    user_id: 2,
+    game_id: 1,
+    username: "testuser",
+    strikes: 0,
+    active: true
+  },
+  {
+    user_id: 3,
+    game_id: 1,
+    username: "exampleuser",
+    strikes: 0,
+    active: true
+  },
+])
