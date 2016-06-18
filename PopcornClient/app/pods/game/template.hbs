@@ -1,13 +1,13 @@
-<h1 class="game__hdr">{{model.name}}</h1>
-
-<ul class="game__players">
-  {{#each model.players as |player|}}
-    {{game/player-card player=player}}
-  {{/each}}
-</ul>
-
-<ul class="game__turns">
-  <p>It is {{model.currentPlayer.username}}'s turn.</p>
-  {{input}}
-  <button {{action "submit"}}>Submit</button>
-</ul>
+<div class="game">
+  <h1 class="game__hdr">{{model.name}}</h1>
+  <ul class="game__players">
+    {{#each model.players as |player|}}
+      {{game/player-card player=player}}
+    {{/each}}
+  </ul>
+  <ul class="game__turns">
+    {{#each model.turns as |turn|}}
+      {{game/game-turn turn=turn game=model}}
+    {{/each}}
+  </ul>
+</div>
