@@ -11,6 +11,7 @@ Router.map(function() {
 
   this.route('game', { path: '/game/:id' }, function() {
     this.route('edit');
+    this.route('new-turn', { path: '/turns/new' });
   });
 
   this.route('games', { path: '/' }, function() {

@@ -2,7 +2,9 @@
   <h1 class="game__hdr">{{model.name}}</h1>
   <ul class="game__players">
     {{#each model.players as |player|}}
-      {{game/player-card player=player}}
+      {{#link-to "user" player.user.id}}
+        {{game/player-card player=player}}
+      {{/link-to}}
     {{/each}}
   </ul>
   <ul class="game__turns">
@@ -10,4 +12,9 @@
       {{game/game-turn turn=turn game=model}}
     {{/each}}
   </ul>
+  {{#if isMyTurn}}
+    {{#link-to "game.new-turn"}}New Turn{{/link-to}}
+  {{/if}}
 </div>
+
+{{outlet}}
