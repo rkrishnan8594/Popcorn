@@ -1,8 +1,10 @@
-<h1 class="games__hdr">Games.</h1>
+<h1 class="games__hdr">Games</h1>
 
 <ul>
   {{#each model as |game|}}
-    <li>{{#link-to "game" game.id}}{{game.name}}{{/link-to}}</li>
+    {{#link-to "game" game.id}}
+      {{games/game-card game=game}}
+    {{/link-to}}
   {{/each}}
 </ul>
 

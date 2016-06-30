@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'api/v1/sessions' }
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
-      resources 'games'
-
       get 'actors'        => 'actors#index'
       get 'actors/:name'  => 'actors#find'
       get 'movies'        => 'movies#index'
@@ -13,7 +11,9 @@ Rails.application.routes.draw do
       get 'users/:id' => 'users#find'
       post 'users'    => 'users#create'
 
+      resources 'games'
       get 'players/:id' => 'players#find'
+      post 'turns' => 'turns#create'
     end
   end
 end

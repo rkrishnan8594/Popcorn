@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  #skip_before_action :authenticate!, only: [:create]
 
   def me
     render json: current_user

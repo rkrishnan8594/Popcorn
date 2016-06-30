@@ -7,7 +7,7 @@ export default Model.extend({
   name: attr('string'),
   current: attr('number'),
   players: hasMany('player', {async: true}),
-
+  turns: hasMany('turns', {async: true}),
   currentPlayer: Ember.computed('current', 'players', function() {
     return this.get('players').objectAt(this.get('current'));
   })
