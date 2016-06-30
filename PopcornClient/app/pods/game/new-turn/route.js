@@ -5,6 +5,9 @@ const { Route } = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return this.store.createRecord('turn');
+    return this.store.createRecord('turn', {
+      game: this.modelFor('game'),
+      player: this.modelFor('game').get('currentPlayer')
+    });
   }
 });

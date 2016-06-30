@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617155002) do
+ActiveRecord::Schema.define(version: 20160630032758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,11 +65,11 @@ ActiveRecord::Schema.define(version: 20160617155002) do
   create_table "turns", force: :cascade do |t|
     t.integer  "player_id"
     t.integer  "game_id"
-    t.string   "type"
+    t.string   "answer_type"
     t.string   "answer"
-    t.boolean  "isCorrect"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "is_correct"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["game_id"], name: "index_turns_on_game_id", using: :btree
     t.index ["player_id"], name: "index_turns_on_player_id", using: :btree
   end

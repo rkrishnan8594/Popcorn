@@ -1,26 +1,26 @@
 class Api::V1::TurnsController < ApplicationController
   respond_to :json, :html
 
-  def index
-    turns = Turn.all
-    render json: turns
-  end
-
   def create
-    turn = Turn.create(turn_params)
-    if turn.save
-      render json: turn, status: 201
+    attributes = turn_attributes.merge({
+      game_id: params[:data][:relationships][:game][:data][:id],
+      player_id: params[:data][:relationships][:player][:data][:id]
+    })
+    @turn = Turn.create(attributes)
+    if @turn.save!
+      render json: @turn, serializer: TurnSerializer, status: 201
     end
-  end
-
-  def show
-    turn = Turn.find(params[:id])
-    render json: turn
   end
 
   private
 
   def turn_params
-    params.require(:data).require(:attributes).permit(:type, :answer, :isCorrect)
+    params.require(:data).permit(:type, {
+      attributes: [:answer, :answer_type, :is_correct]
+    })
+  end
+
+  def turn_attributes
+    turn_params[:attributes] || {}
   end
 end

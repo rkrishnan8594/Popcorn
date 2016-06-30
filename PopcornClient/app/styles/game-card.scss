@@ -1,0 +1,18 @@
+.game-card {
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  display: inline-block;
+  float: left;
+  height: 100px;
+  list-style-type: none;
+  margin: 35px 20px 0 0;
+  width: 200px;
+  &:hover {
+    border-color: #F7CA18;
+  }
+}
+
+.game-card__info {
+  text-align: center;
+  margin-top: 4px;
+}

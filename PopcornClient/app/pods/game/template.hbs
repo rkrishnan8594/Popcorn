@@ -10,6 +10,7 @@
   <ul class="game__turns">
     {{#each model.turns as |turn|}}
       {{game/game-turn turn=turn game=model}}
+      turn
     {{/each}}
   </ul>
   {{#if isMyTurn}}

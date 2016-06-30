@@ -3,9 +3,9 @@ import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
-  type: attr('string'),
-  answer: attr('string'),
+  answerType: attr('string'),
   isCorrect: attr('boolean'),
+  answer: attr('string'),
   game: belongsTo('game', {async: true}),
   player: belongsTo('player', {async: true})
 });

@@ -8,7 +8,6 @@ class Api::V1::GamesController < ApplicationController
 
   def create
     game = Game.create(game_params)
-    turn = Turn.create(game_id: game.id, player_id: 1)
     if game.save
       render json: game, status: 201
     end
