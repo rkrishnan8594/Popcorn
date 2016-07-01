@@ -13,7 +13,7 @@ a {
 }
 
 body {
-  background-color: #534A9A;
+  background-color: $lightPurple;
   color: #FFF;
 }
 
@@ -38,7 +38,12 @@ input {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px $darkPurple inset;
+  color: #FFF !important
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 p {

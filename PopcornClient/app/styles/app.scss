@@ -1,12 +1,15 @@
 // Universal
+@import "variables";
 @import "base";
 
 // Pods
 @import "application";
 @import "login";
 @import "games";
-@import "navbar";
 @import "user";
 @import "game";
+
+// Components
+@import "navbar";
 @import "player";
 @import "game-card";

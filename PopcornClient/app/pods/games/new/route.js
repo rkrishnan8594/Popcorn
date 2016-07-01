@@ -8,10 +8,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
     return this.store.createRecord('game');
   },
 
-  deactivate() {
-    this.currentModel.deleteRecord();
-  },
-
   actions: {
     save(model) {
       let self = this;

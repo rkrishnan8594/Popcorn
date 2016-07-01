@@ -4,13 +4,14 @@
 }
 
 .login__form {
-  margin: 50px auto 30px auto;
+  margin: 30px auto 30px auto;
   width: 20%;
 }
 
 .login__input {
-  background-color: #FFF;
+  background-color: $darkPurple;
   border-radius: 2px;
+  color: #FFF;
   height: 25px;
   font-size: 12px;
   margin-bottom: 10px;
@@ -19,19 +20,14 @@
 }
 
 .login__btn {
-  background-color: #534A9A;
-  border: 2px solid #FFF;
+  background-color: #FFF;
   border-radius: 3px;
-  color: #FFF;
+  color: $lightPurple;
   font-size: 12px;
   font-weight: bold;
   height: 30px;
   margin: 12px 62px;
   width: 100px;
-  &:hover {
-    background-color: #FFF;
-    color: #534A9A;
-  }
 }
 
 .signup__link {

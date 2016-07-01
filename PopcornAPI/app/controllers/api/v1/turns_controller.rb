@@ -2,10 +2,7 @@ class Api::V1::TurnsController < ApplicationController
   respond_to :json, :html
 
   def create
-    attributes = turn_attributes.merge({
-      game_id: params[:data][:relationships][:game][:data][:id],
-      player_id: params[:data][:relationships][:player][:data][:id]
-    })
+    attributes = turn_attributes_merge
     @turn = Turn.create(attributes)
     if @turn.save!
       render json: @turn, serializer: TurnSerializer, status: 201
@@ -22,5 +19,12 @@ class Api::V1::TurnsController < ApplicationController
 
   def turn_attributes
     turn_params[:attributes] || {}
+  end
+
+  def turn_attributes_merge
+    return turn_attributes.merge({
+      game_id: params[:data][:relationships][:game][:data][:id],
+      player_id: params[:data][:relationships][:player][:data][:id]
+    })
   end
 end

@@ -14,10 +14,8 @@ Router.map(function() {
     this.route('new-turn', { path: '/turn' });
   });
 
-  this.route('games', { path: '/' }, function() {
-    this.route('new');
-  });
-
+  this.route('games', { path: '/' });
+  this.route('new', { path: '/games/new' });
   this.route('user', { path: '/user/:id' });
 });
 
