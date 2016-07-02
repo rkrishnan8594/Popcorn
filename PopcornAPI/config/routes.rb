@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources 'games'
       get 'players/:id' => 'players#find'
       post 'turns' => 'turns#create'
+      get 'turns/:id' => 'turns#find'
     end
   end
 end

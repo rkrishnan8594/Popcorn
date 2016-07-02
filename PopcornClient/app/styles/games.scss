@@ -2,3 +2,23 @@
   margin-top: 5%;
   text-align: center;
 }
+
+.games__new-game {
+  background-color: #FFF;
+  border-radius: 3px;
+  height: 25px;
+  padding-top: 8px;
+  width: 100px;
+}
+
+.games__link {
+  display: block;
+  width: 100px;
+}
+
+.games__new-game p {
+  color: $lightPurple;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}

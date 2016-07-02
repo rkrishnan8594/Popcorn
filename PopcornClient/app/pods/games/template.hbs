@@ -1,13 +1,15 @@
 <h1 class="games__hdr">Games</h1>
 
-<ul>
+{{#link-to "new" class="games__link"}}
+  <div class="games__new-game">
+    <p>New Game</p>
+  </div>
+{{/link-to}}
+
+<ul class="games__game-cards">
   {{#each model as |game|}}
     {{#link-to "game" game.id}}
       {{games/game-card game=game}}
     {{/link-to}}
   {{/each}}
 </ul>
-
-{{outlet}}
-
-<div>{{#link-to "new"}}New Game{{/link-to}}</div>

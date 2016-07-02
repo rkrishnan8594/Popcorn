@@ -1,0 +1,9 @@
+<!--<div class="game-form">
+  {{input value=model.name placeholder="Name"}}
+  <button {{action "save" model}}>Submit</button>
+</div>-->
+
+<form class="login__form" {{action "save" on="submit"}}>
+  {{input class="login__input" value=model.name placeholder="Name"}}
+  <button class="login__btn" type="submit">Submit</button>
+</form>

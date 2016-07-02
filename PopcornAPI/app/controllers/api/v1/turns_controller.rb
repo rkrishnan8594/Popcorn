@@ -9,6 +9,11 @@ class Api::V1::TurnsController < ApplicationController
     end
   end
 
+  def find
+    turn = Turn.find(params[:id])
+    render json: turn
+  end
+
   private
 
   def turn_params
